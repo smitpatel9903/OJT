@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="mybody">
+    
+</body>
+<script>
+
+    var colors = ["green", "red", "blue", "orange", "black","pink"];
+    var mybody = document.getElementById("mybody");
+    var i=0;
+    setInterval(()=>{
+    mybody.style.backgroundColor = colors[i];
+    ++i;
+    if(i== colors.length)
+    {
+    i=0;
+    }
+    }, 1000)
+    
+    </script>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIll making</title>
+</head>
+<body>
+    
+    <select name="" id="product">
+        <option value="35000">Samsung S20</option>
+        <option value="70000">Samsung S22</option>
+        <option value="90000">Samsung S23</option>
+        <option value="120000">Samsung S23 Ultra</option>
+    </select>
+    <hr>
+
+    Price:-<input type="text" id="price">
+    <br><br>
+    Qauntity<input type="text" id="count">
+    <br><br>
+    Total Amount<input type="text" id="total">
+
+    <script>
+
+        var product = document.getElementById('product');
+        var total = document.getElementById('total');
+        var count = document.getElementById('count');
+        var price = document.getElementById('price');
+
+        product.addEventListener('change',()=>{ price.value=product.value; })
+        total.addEventListener('focus',()=>{ total.value=count.value*product.value; })
+
+    </script>
+</body>
+</html>
